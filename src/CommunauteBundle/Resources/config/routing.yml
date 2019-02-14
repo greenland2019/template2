@@ -1,0 +1,15 @@
+communaute_homepage:
+    path:     /
+    defaults: { _controller: CommunauteBundle:Default:index }
+
+communaute_forum:
+    path:     /forum
+    defaults: { _controller: CommunauteBundle:Forum:accesthemes }
+
+communaute_theme:
+    path:     /forum/{user}
+    defaults: { _controller: CommunauteBundle:Forum:addtheme }
+
+communaute_affich_comment :
+    path:     /comments/{idtheme}
+    defaults: { _controller: CommunauteBundle:Forum:comments }

@@ -1,3 +1,7 @@
 plants_homepage:
-    path:     /
+    path:     /home
     defaults: { _controller: PlantsBundle:Default:index }
+
+plants_inscription:
+    path:     /inscription
+    defaults: { _controller: PlantsBundle:User:adduser }

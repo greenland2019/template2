@@ -1,0 +1,69 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#connexion").click(function () {
+            $("#b1").hide();
+            $("#nom").hide();
+            $("#b2").hide();
+            $("#prenom").hide();
+            $("#b5").hide();
+            $("#numtel").hide();
+            $("#b6").hide();
+            $("#adresse").hide();
+            $("#choix").val('connexion');
+        });
+
+        $("#inscrip").click(function () {
+            $("#b1").show();
+            $("#nom").show();
+            $("#b2").show();
+            $("#prenom").show();
+            $("#b5").show();
+            $("#numtel").show();
+            $("#b6").show();
+            $("#adresse").show();
+            $("#choix").val('inscription');
+        });
+});
+</script>
+<head>
+    <h1 ALIGN="center">Connexion</h1>
+</head>
+<body>
+<button id="connexion">connexion</button><button id="inscrip">inscription</button><br>
+<form method="post" >
+
+    <table>
+        <tr>
+            <td> <b id="b1" hidden>Nom:</b></td>
+            <td><input type="text" name="nom" id="nom" hidden/></td>
+        </tr>
+        <tr>
+            <td> <b id="b2" hidden>Prenom:</b></td>
+            <td><input type="text" name="prenom" id="prenom" hidden/></td>
+        </tr>
+        <tr>
+            <td><b id="b3">Email:</b></td>
+            <td><input type="text" name="email" id="email" /></td>
+        </tr>
+        <tr>
+            <td><b id="b4">Mot de passe:</b></td>
+            <td><input type="password" name="password" id="password"/></td>
+        </tr>
+        <tr>
+            <td><b  id="b5" hidden>Numero de telephone:</b></td>
+            <td><input type="number" name="numtel" id="numtel" hidden/></td>
+        </tr>
+        <tr>
+            <td><b  id="b6" hidden>Adresse:</b></td>
+            <td><input type="text" name="adresse" id="adresse" hidden/></td>
+        </tr>
+        <input type="hidden" id="choix" name="choix">
+    </table>
+
+    <button type="submit" id="log">Soumettre</button>
+</form>
+</body>
+
+</html>

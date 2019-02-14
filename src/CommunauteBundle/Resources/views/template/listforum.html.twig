@@ -1,0 +1,29 @@
+<html>
+<head>
+    <h1 ALIGN="center">FORUM DE DISCUSSION</h1>
+</head>
+<body>
+<h2>THEMES</h2>
+<p>Bonjour {{ app.session.get('login')}}</p>
+{% if not themes %}
+    <p align="center">Aucun theme de discussion pour l'instant</p>
+
+{% endif %}
+
+    <dl>
+        {% for sujet in themes %}
+
+            <dd><a href="{{ path('communaute_affich_comment',{'idtheme':sujet.id}) }}">{{ sujet.nom }}</a></dd>
+
+        {% endfor %}
+    </dl>
+
+    <form method="post">
+        <input type="text" id="nom" name="nom">
+
+        <button id="ajout" type="submit">Ajouter</button>
+
+    </form>
+</body>
+
+</html>

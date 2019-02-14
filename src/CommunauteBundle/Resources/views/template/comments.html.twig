@@ -1,0 +1,89 @@
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script >
+    $(document).ready(function(){
+        $("#commenter").click(function(){
+            $.ajax({
+                url:        "{{ path('communaute_affich_comment',{'idtheme':them.id}) }}",
+                type:       'POST',
+                dataType:   'json',
+                data :{ 'commentaire': $("#textcomment").val()},
+                async:      true,
+
+                success: function(data) {
+
+                    // $('#tableau').append();
+                    //for(i = 0; i < 1; i++) {
+
+                    // voiture = datas[i];
+                    var e = $(' <div style="background-color: darkseagreen"><p id= "comspace"></p></div>');
+                    var f = $(' <img src="{{ asset('templates /images/user.png') }}" height="20px" width="20px"><div ><b id= "userspace" style="color: green"></b></div>');
+
+                    $('#comspace', e).html(data.content);
+                    $('#userspace', f).html(data.editeur);
+                    $('#commentsdiv').append(f,e);
+                    // $('#textcomment').html("");
+                    $('#textcomment').val('');
+                    $('#vide').val('');
+                    // $('#nomclub').html("Club organisateur: "+data.club);
+                    //  $('#tableau').append();
+                    //  }
+
+                    /*  for(i = 0; i < data.length; i++) {
+                          event = data[i];
+                          var e = $('<tr><td id = "titre"></td><td id = "club"></td></tr>');
+
+                          $('#titre', e).html(event['titre']);
+                          $('#club', e).html(student['club']);
+                          $('#commentsdiv').append(e);
+                      }*/
+                },
+                error : function() {
+                    alert('Ajax request failed.');
+                    /* $('#ref').html("");
+                     $('#marq').html("");
+                     $('#serie').html("");*/
+                    //  $('#tableau').append();
+                }
+            });
+
+        });
+
+
+    });
+</script>
+<head>
+    <h1 align="center">THEME:{{ them.nom }}</h1>
+
+</head>
+<body>
+<table border="1">
+
+
+</table>
+
+{% if not comments %}
+    <p id="vide"></p>
+{% endif %}
+<div id="commentsdiv">
+    {% for comment in comments %}
+        <div id="userdiv">
+            <img src="{{ asset('templates/images/user.png') }}" height="20px" width="20px"><br><b style="color: green">{{ comment.editeur.prenom }}</b>
+        </div>
+        <div id="commentdiv" style="background-color: darkseagreen">
+            <p>{{ comment.contenu }}</p>
+        </div>
+    {% endfor %}
+
+</div>
+<div >
+    <textarea cols="40" rows="10" id="textcomment"></textarea>
+    <br>
+    <button id="commenter">Commenter</button>
+
+</div>
+
+</body>
