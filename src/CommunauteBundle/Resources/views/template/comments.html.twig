@@ -51,8 +51,27 @@
             });
 
         });
+        $("#delete").click(function(){
+            $.ajax({
+                url:        "{{ path('communaute_sup_comment',{'idcomment':0}) }}",
+                type:       'POST',
+                dataType:   'json',
+                async:      true,
 
+                success: function(data) {
 
+                 alert("gdghd");
+                },
+                error : function() {
+                    alert('Ajax request failed.');
+                    /* $('#ref').html("");
+                     $('#marq').html("");
+                     $('#serie').html("");*/
+                    //  $('#tableau').append();
+                }
+            });
+
+        });
     });
 </script>
 <head>
@@ -71,11 +90,33 @@
 <div id="commentsdiv">
     {% for comment in comments %}
         <div id="userdiv">
+            {% if comment.editeur.role=="client" %}
             <img src="{{ asset('templates/images/user.png') }}" height="20px" width="20px"><br><b style="color: green">{{ comment.editeur.prenom }}</b>
+            {% endif %}
+            {% if comment.editeur.role=="admin" %}
+            <img src="{{ asset('templates/images/user.png') }}" height="20px" width="20px"><br><b style="color: green">{{ comment.editeur.prenom }}</b>
+            {% endif %}
         </div>
         <div id="commentdiv" style="background-color: darkseagreen">
-            <p>{{ comment.contenu }}</p>
+            <p id="content">{{ comment.contenu }}</p>
+            <input type="hidden" value="{{ comment.id }}" id="commentid">
         </div>
+        <div id="configdiv">
+            {% if comment.editeur.prenom==app.session.get('login') %}
+
+                <button style="background-color: transparent;border-color: transparent" id="delete">
+                    <img src="{{ asset('templates/images/trash.png') }}" height="20px" width="20px">
+                </button>
+                <button style="background-color: transparent;border-color: transparent" id="edit" hidden>
+                    <img src="{{ asset('templates/images/edit.png') }}" height="20px" width="20px">
+                </button>
+
+            {% endif %}
+            <button style="background-color: transparent;border-color: transparent" id="edit">
+                J'aime
+            </button>
+        </div>
+        <hr>
     {% endfor %}
 
 </div>

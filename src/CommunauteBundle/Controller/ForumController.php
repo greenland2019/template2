@@ -42,7 +42,8 @@ class ForumController extends Controller
             if ($request->get("choix")=="connexion"){
                 $user= $em->getRepository('PlantsBundle:Personne')->findOneBy(['email'=> $request->get("email"),'password'=> $request->get("password")]);
                 if($user){
-
+                    $sesion =$request->getSession();
+                    $sesion->set('login', $user->getPrenom());
                     return $this->redirectToRoute('communaute_theme', array('user' => $user->getPrenom()));
 
                 }
@@ -65,18 +66,21 @@ class ForumController extends Controller
 
 
         if ($request->getMethod() == "POST") {
-            if (!empty( $request->get("nom")) ){
-                $theme = new Theme();
-                $theme->setNom($request->get("nom"));
-                $theme->setDateCreation(new \DateTime("now"));
-                $theme->setCreateur($connector);
-                $theme->setVisites(0);
-                $theme->setVisites($theme->getVisites()+1);
-                $em->persist($theme);
-                $em->flush();
+            if($request->get("ajout")) {
+                if (!empty($request->get("nom"))) {
+                    $theme = new Theme();
+                    $theme->setNom($request->get("nom"));
+                    $theme->setDateCreation(new \DateTime("now"));
+                    $theme->setCreateur($connector);
+                    $theme->setVisites(0);
+                    $theme->setVisites($theme->getVisites() + 1);
+                    $em->persist($theme);
+                    $em->flush();
 
-                return $this->redirectToRoute("communaute_affich_comment", array('idtheme' => $theme->getId()));
+                    return $this->redirectToRoute("communaute_affich_comment", array('idtheme' => $theme->getId()));
+                }
             }
+
             else
                 return  $this->render('@Communaute/template/listforum.html.twig',array('sujets'=>$themes));
         }
@@ -116,5 +120,27 @@ class ForumController extends Controller
         }
 
         return $this->render('@Communaute/template/comments.html.twig', array('comments' => $comments, 'them' => $sujet));
+    }
+
+    public  function supcomment($idcomment, Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        if ($request->isXmlHttpRequest()) {
+            $comment = $em->getRepository('CommunauteBundle:Commentaire')->find($idcomment);
+            $em->remove($comment);
+            $em->flush();
+
+
+
+            $response = new Response(json_encode(array(
+                'content' => $comment->getContenu(),
+
+            )));
+             $response->headers->set('Content-Type', 'application/json');
+
+            return $response;
+
+        }
     }
 }

@@ -1,862 +1,844 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
 <!DOCTYPE html>
 <html lang="zxx">
+   <head>
+      <title>Toys Shop an Ecommerce Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
+      <!--meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Toys Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="{{ asset('templates/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="{{ asset('templates/css/fontawesome-all.min.css') }}" rel="stylesheet" type="text/css" media="all">
+      <!-- //font-awesome icons -->
+      <!-- For Clients slider -->
+      <link rel="stylesheet" href="{{ asset('templates/css/flexslider.css') }}" type="text/css" media="all" />
+      <!--flexs slider-->
+      <link href="{{ asset('templates/css/JiSlider.css" rel="stylesheet') }}">
+      <!--Shoping cart-->
+      <link rel="stylesheet" href="{{ asset('templates/css/shop.css" type="text/css') }}" />
+      <!--//Shoping cart-->
+      <!--stylesheets-->
+      <link href="{{ asset('templates/css/style.css') }}" rel='stylesheet' type='text/css' media="all">
+      <!--//stylesheets-->
+      <link href="//fonts.googleapis.com/css?family=Sunflower:500,700" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+   </head>
+   <body>{% if  app.session.get('login')  %}
+      <script>alert('Bienvenu '+{{ app.session.get('login')}})</script>
+   {% endif %}
+   {% if  app.flashes('error')  %}
+   {% for flashMessage in app.flashes('error') %}
 
-<head>
-	<title>Plants Agriculture Category Bootstrap Responsive Website Template | Home :: W3layouts</title>
-	<!-- Meta tag Keywords -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8" />
-	<meta name="keywords" content="Plants Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+      <div >
+          {{ flashMessage }}
+      </div>
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!--// Meta tag Keywords -->
-
-	<!-- Custom-Files -->
-	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-	<!-- Bootstrap-Core-CSS -->
-	<link href="{{ asset('templates/css/css_slider.css') }}" type="text/css" rel="stylesheet" media="all">
-	<!-- banner slider -->
-	<link rel="stylesheet" href="{{ asset('templates/css/style.css') }}" type="text/css" media="all" />
-	<!-- Style-CSS -->
-	<link href="{{ asset('templates/css/font-awesome.min.css') }}" rel="stylesheet">
-	<!-- Font-Awesome-Icons-CSS -->
-	<!-- //Custom-Files -->
-
-	<!-- Web-Fonts -->
-	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
-	 rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Niconne&amp;subset=latin-ext" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=devanagari,latin-ext"
-	 rel="stylesheet">
-	<!-- //Web-Fonts -->
-</head>
-
-<body>
-	<div id="home">
-		<!-- header -->
-		<header class="header-style fixed-top">
-			<div class="container">
-				<div class="header d-lg-flex justify-content-between align-items-center">
-					<!-- logo -->
-					<h1 class="logo text-center">
-						<a href="index.html.twig">Plants<i class="fa fa-pagelines" aria-hidden="true"></i>
-						</a>
-					</h1>
-					<!-- //logo -->
-					<!-- nav -->
-					<div class="nav_w3ls">
-						<nav>
-							<label for="drop" class="toggle toogle-2">Menu</label>
-							<input type="checkbox" id="drop" />
-							<ul class="menu">
-								<li class="active ml-0"><a href="index.html.twig">Home</a></li>
-								<li><a href="#about">About Us</a></li>
-								<li><a href="#services">Services</a></li>
-								<li><a href="{{ path('communaute_forum') }}">Forum</a></li>
-								<li>
-									<!-- First Tier Drop Down -->
-									<label for="drop-2" class="toggle toggle-drop">Pages <span class="fa fa-angle-down" aria-hidden="true"></span>
-									</label>
-									<a href="#">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-									<input type="checkbox" id="drop-2" />
-									<ul class="list-unstyled">
-										<li><a href="#why" class="drop-text">Why Choose Us</a></li>
-										<li class="my-2"><a href="#partners" class="drop-text">Our Partners</a></li>
-										<li><a href="#testi" class="drop-text">Testimonials</a></li>
-									</ul>
-								</li>
-								<li><a href="#blog">Blog</a></li>
-								<li><a href="#gallery">Gallery</a></li>
-								<li class="mr-0"><a href="#contact">Contact Us</a></li>
-							</ul>
-						</nav>
-					</div>
-					<!-- //nav -->
-				</div>
-			</div>
-		</header>
-		<!-- //header -->
-
-		<!-- banner -->
-		<div class="banner_w3lspvt">
-			<div class="csslider infinity" id="slider1">
-				<input type="radio" name="slides" checked="checked" id="slides_1" />
-				<input type="radio" name="slides" id="slides_2" />
-				<input type="radio" name="slides" id="slides_3" />
-				<input type="radio" name="slides" id="slides_4" />
-				<ul>
-					<li>
-						<div class="banner-top">
-							<div class="container">
-								<div class="w3layouts-banner-info text-center">
-									<h3 class="text-wh">Welcome to Plants</h3>
-									<p class="text-li mx-auto mt-2">Ut enim ad minim quis nostrud exerci sed do eiusmod tempor incididunt ut
-										labore et
-										dolore magna aliqua.</p>
-									<a href="#about" class="button-style scroll mt-sm-5 mt-4">Read More</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="banner-top1">
-							<div class="container">
-								<div class="w3layouts-banner-info text-center">
-									<h3 class="text-wh">Plants For Healthy</h3>
-									<p class="text-li mx-auto mt-2">Ut enim ad minim quis nostrud exerci sed do eiusmod tempor incididunt ut
-										labore et
-										dolore magna aliqua.</p>
-									<a href="#about" class="button-style scroll mt-sm-5 mt-4">Read More</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="banner-top2">
-							<div class="container">
-								<div class="w3layouts-banner-info text-center">
-									<h3 class="text-wh">Welcome to Plants</h3>
-									<p class="text-li mx-auto mt-2">Ut enim ad minim quis nostrud exerci sed do eiusmod tempor incididunt ut
-										labore et
-										dolore magna aliqua.</p>
-									<a href="#about" class="button-style scroll mt-sm-5 mt-4">Read More</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="banner-top3">
-							<div class="container">
-								<div class="w3layouts-banner-info text-center">
-									<h3 class="text-wh">Plants For Healthy</h3>
-									<p class="text-li mx-auto mt-2">Ut enim ad minim quis nostrud exerci sed do eiusmod tempor incididunt ut
-										labore et
-										dolore magna aliqua.</p>
-									<a href="#about" class="button-style scroll mt-sm-5 mt-4">Read More</a>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-				<div class="arrows">
-					<label for="slides_1"></label>
-					<label for="slides_2"></label>
-					<label for="slides_3"></label>
-					<label for="slides_4"></label>
-				</div>
-			</div>
-			<div class="icon-w3">
-				<a href="#about" class="scroll">
-					<i class="fa fa-angle-double-down" aria-hidden="true"></i>
-				</a>
-			</div>
-		</div>
-		<!-- //banner -->
-	</div>
-	<!-- //main -->
-
-	<!-- about -->
-	<section class="about" id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 about-left-w3pvt offset-lg-1">
-					<div class="main-img">
-						<img src="{{ asset('templates/images/ab.jpg') }}" alt="" class="img-fluid pos-aboimg">
-						<img src="{{ asset('templates/images/ab2.jpg') }}" alt="" class="img-fluid pos-aboimg2">
-					</div>
-				</div>
-				<div class="col-lg-6 about-right offset-lg-1">
-					<h4 class="sub-tittle-w3layouts let">About Us</h4>
-					<h3 class="tittle-w3layouts text-uppercase pr-lg-5 mt-2">Duis aute irure olor in cillum solore</h3>
-					<p class="mt-4 mb-5">Lorem ipsum dolor sit amet Neque porro quisquam est qui dolorem Lorem int ipsum dolor sit
-						amet
-						when an unknown printer took a galley of type.Vivamus id tempor felis.</p>
-					<ul class="author list-unstyled d-flex">
-						<li><img class="img-fluid rounded-circle" src="{{ asset('templates/images/te1.jpg') }}" alt=""></li>
-						<li class="ml-4 mt-4"><span>Admin Name</span>Comany Name</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- //about -->
-
-	<!-- services -->
-	<div class="serives-agile py-5" id="services">
-		<div class="container py-xl-5 py-lg-3">
-			<div class="row support-bottom text-center">
-				<div class="col-md-4 services-w3ls-grid">
-					<i class="fa fa-envira" aria-hidden="true"></i>
-					<h4 class="text-wh text-uppercase mt-md-5 mt-4 mb-3">Garden Care</h4>
-					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
-				</div>
-				<div class="col-md-4 services-w3ls-grid my-md-0 my-4">
-					<i class="fa fa-tree" aria-hidden="true"></i>
-					<h4 class="text-wh text-uppercase mt-md-5 mt-4 mb-3">Plant Renovation</h4>
-					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
-				</div>
-				<div class="col-md-4 services-w3ls-grid">
-					<i class="fa fa-pagelines" aria-hidden="true"></i>
-					<h4 class="text-wh text-uppercase mt-md-5 mt-4 mb-3">Always Fresh</h4>
-					<p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //services -->
-
-	<!-- blog -->
-	<section class="w3ls-bnrbtm py-5" id="blog">
-		<div class="py-xl-5 py-lg-3">
-			<div class="row no-gutters">
-				<div class="col-xl-5 who-left-w3pvt offset-xl-1 pt-xl-3 pr-xl-0 pr-3">
-					<h3 class="w3ls-title text-da text-center font-weight-bold mb-5 pb-lg4">Latest <span class="font-weight-light">Blog</span></h3>
-					<ul class="timeline">
-						<li>
-							<a href="#why" class="head-text-w3">Iste natus error sit</a>
-							<a href="#why" class="float-right">21 Nov, 2018</a>
-							<p>Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris.</p>
-						</li>
-						<li>
-							<a href="#why" class="head-text-w3">Totam rem aperiam</a>
-							<a href="#why" class="float-right">26 Nov, 2018</a>
-							<p>Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco.</p>
-						</li>
-						<li>
-							<a href="#why" class="head-text-w3">Eaque ipsa quae</a>
-							<a href="#why" class="float-right">30 Nov, 2018</a>
-							<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-						</li>
-					</ul>
-				</div>
-				<div class="col-xl-6 mt-xl-0 mt-md-5 mt-4 text-xl-right text-center">
-					<img class="img-fluid rounded" src="{{ asset('templates/images/blog.jpg') }}" alt="">
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- //blog -->
-
-	<!-- why -->
-	<section class="blog_w3ls pb-5" id="why">
-		<div class="container pb-xl-5 pb-lg-3">
-			<h3 class="w3ls-title text-da text-center font-weight-bold mb-5 pb-lg-4">Why <span class="font-weight-light">Choose
-					Us</span></h3>
-			<div class="row">
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6">
-					<div class="card border-0 med-blog">
-						<div class="card-header p-0">
-							<a href="single.html.twig">
-								<img class="card-img-bottom" src="{{ asset('templates/images/wh1.jpg') }}" alt="Card image cap">
-							</a>
-						</div>
-						<div class="card-body border border-top-0">
-							<div class="mb-3">
-								<h5 class="blog-title card-title m-0">Quality Products
-								</h5>
-								<div class="blog_w3icon">
-									<span>
-										Magna Kictum - loremipsum</span>
-								</div>
-							</div>
-							<p>Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-					<div class="card border-0 med-blog">
-						<div class="card-header p-0">
-							<a href="single.html.twig">
-								<img class="card-img-bottom" src="{{ asset('templates/images/wh2.jpg' ) }}" alt="Card image cap">
-							</a>
-						</div>
-						<div class="card-body border border-top-0">
-							<div class="mb-3">
-								<h5 class="blog-title card-title m-0">Work Smart
-								</h5>
-								<div class="blog_w3icon">
-									<span>
-										Magna Kictum - loremipsum</span>
-								</div>
-							</div>
-							<p>Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
-					<div class="card border-0 med-blog">
-						<div class="card-header p-0">
-							<a href="single.html.twig">
-								<img class="card-img-bottom" src="{{ asset('templates/images/wh3.jpg') }}" alt="Card image cap">
-							</a>
-						</div>
-						<div class="card-body border border-top-0">
-							<div class="mb-3">
-								<h5 class="blog-title card-title m-0">Excellent Services
-								</h5>
-								<div class="blog_w3icon">
-									<span>
-										Magna Kictum - loremipsum</span>
-								</div>
-							</div>
-							<p>Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
-			</div>
-		</div>
-	</section>
-	<!-- //why -->
-
-	<!-- stats-->
-	<div class="stats-info py-5">
-		<div class="container py-xl-5 py-lg-3">
-			<h4 class="stat-text-wthree text-wh mx-auto text-center font-italic mb-sm-5 mb-4">We give you Care tips and Ideas on
-				what style suits your garden</h4>
-			<div class="row py-5">
-				<div class="col-lg-3 col-sm-6 stats-grid-w3-agile">
-					<div class="row">
-						<div class="col-4 icon-right-w3ls text-sm-left text-center">
-							<span class="fa fa-smile-o" data-blast="bgColor"></span>
-						</div>
-						<div class="col-8">
-							<p class="counter font-weight-bold text-wh">1280</p>
-							<p class="text-li mt-2" data-blast="color">Happy Customers</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 stats-grid-w3-agile mt-sm-0 mt-4">
-					<div class="row">
-						<div class="col-4 icon-right-w3ls text-sm-left text-center">
-							<span class="fa fa-shield" data-blast="bgColor"></span>
-						</div>
-						<div class="col-8">
-							<p class="counter font-weight-bold text-wh">920</p>
-							<p class="text-li mt-2" data-blast="color">Awards Win</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 stats-grid-w3-agile mt-lg-0 mt-4">
-					<div class="row">
-						<div class="col-4 icon-right-w3ls text-sm-left text-center">
-							<span class="fa fa-leaf" data-blast="bgColor"></span>
-						</div>
-						<div class="col-8">
-							<p class="counter font-weight-bold text-wh">1400</p>
-							<p class="text-li mt-2" data-blast="color">Products</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 stats-grid-w3-agile mt-lg-0 mt-4">
-					<div class="row">
-						<div class="col-4 icon-right-w3ls text-sm-left text-center">
-							<span class="fa fa-thumbs-o-up" data-blast="bgColor"></span>
-						</div>
-						<div class="col-8">
-							<p class="counter font-weight-bold text-wh">1080</p>
-							<p class="text-li mt-2" data-blast="color">Ratings</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //stats -->
-
-	<!-- team -->
-	<div class="team py-5" id="team">
-		<div class="container py-xl-5 py-lg-3">
-			<h3 class="w3ls-title text-da text-center font-weight-bold mb-5 pb-xl-4">Our <span class="font-weight-light">Team</span></h3>
-			<div class="row team-bottom pt-4 text-center">
-				<div class="col-lg-3 col-sm-6 team-grid">
-					<img src="{{ asset('templates/images/t1.jpg') }}" class="img-fluid" alt="">
-					<div class="caption">
-						<div class="team-text">
-							<h4>Mack Joe</h4>
-						</div>
-						<ul>
-							<li>
-								<a href="#">
-									<i class="fa fa-facebook f1" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-twitter f2" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-google-plus f3" aria-hidden="true"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 team-grid mt-sm-0 mt-5">
-					<img src="{{ asset('templates/images/t3.jpg') }}" class="img-fluid" alt="">
-					<div class="caption">
-						<div class="team-text">
-							<h4>Cruz Deo</h4>
-						</div>
-						<ul>
-							<li>
-								<a href="#">
-									<i class="fa fa-facebook f1" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-twitter f2" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-google-plus f3" aria-hidden="true"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 team-grid mt-lg-0 mt-5">
-					<img src="{{ asset('templates/images/t2.jpg') }}" class="img-fluid" alt="">
-					<div class="caption">
-						<div class="team-text">
-							<h4>Rochy Jae</h4>
-						</div>
-						<ul>
-							<li>
-								<a href="#">
-									<i class="fa fa-facebook f1" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-twitter f2" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-google-plus f3" aria-hidden="true"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 team-grid  mt-lg-0 mt-5">
-					<img src="{{ asset('templates/images/t4.jpg') }}" class="img-fluid" alt="">
-					<div class="caption">
-						<div class="team-text">
-							<h4>Rojo Poy</h4>
-						</div>
-						<ul>
-							<li>
-								<a href="#">
-									<i class="fa fa-facebook f1" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-twitter f2" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa fa-google-plus f3" aria-hidden="true"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //team -->
-
-	<!-- testimonials -->
-	<section class="clients py-5" id="testi">
-		<div class="container py-xl-5 py-lg-3">
-			<div class="row py-sm-5">
-				<div class="col-lg-6 col-sm-8 col-10">
-					<div class="feedback-top">
-						<p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem ipsum dolor sit amet consectetur adipisicing
-							elit
-							sedc dnmo eiusmod. sed do eiusmod tempor
-							incididunt
-							ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
-						<h4 class="mt-4 text-da font-weight-bold mb-4">Mary Jane</h4>
-					</div>
-				</div>
-				<div class="col-lg-6 col-sm-4 col-2"></div>
-			</div>
-		</div>
-	</section>
-	<!-- //testimonials -->
-
-	<!-- gallery -->
-	<section class="portfolio py-5" id="gallery">
-		<div class="container py-xl-5 py-lg-3">
-			<h3 class="w3ls-title text-center font-weight-bold mb-5">Our <span class="font-weight-light">Plants</span></h3>
-			<div class="row pt-4">
-				<div class="col-md-3 gal-grid-wthree">
-					<div class="gallery-demo">
-						<a href="#gal1">
-							<img src="{{ asset('templates/images/g1.jpg') }}" alt=" " class="img-fluid" />
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 gal-grid-wthree my-md-0 my-4">
-					<div class="gallery-demo">
-						<a href="#gal2">
-							<img src="{{ asset('templates/images/g2.jpg') }}" alt=" " class="img-fluid" />
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 gal-grid-wthree">
-					<div class="gallery-demo">
-						<a href="#gal3">
-							<img src="{{ asset('templates/images/g3.jpg') }}" alt=" " class="img-fluid" />
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 gal-grid-wthree mt-md-0 mt-4">
-					<div class="gallery-demo">
-						<a href="#gal4">
-							<img src="{{ asset('templates/images/g4.jpg') }}" alt=" " class="img-fluid" />
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="row mt-4">
-				<div class="col-md-3 gal-grid-wthree">
-					<div class="gallery-demo">
-						<a href="#gal5">
-							<img src="{{ asset('templates/images/g5.jpg') }}" alt=" " class="img-fluid" />
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 gal-grid-wthree my-md-0 my-4">
-					<div class="gallery-demo">
-						<a href="#gal6">
-							<img src="{{ asset('templates/images/g6.jpg') }}" alt=" " class="img-fluid" />
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 gal-grid-wthree">
-					<div class="gallery-demo">
-						<a href="#gal7">
-							<img src="{{ asset('templates/images/g7.jpg') }}" alt=" " class="img-fluid" />
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 gal-grid-wthree mt-md-0 mt-4">
-					<div class="gallery-demo">
-						<a href="#gal8">
-							<img src="{{ asset('templates/images/g8.jpg') }}" alt=" " class="img-fluid" />
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- gallery model-->
-	<!-- popup-->
-	<div id="gal1" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g1.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup -->
-	<!-- popup-->
-	<div id="gal2" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g2.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup -->
-	<!-- popup-->
-	<div id="gal3" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g3.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup3 -->
-	<!-- popup-->
-	<div id="gal4" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g4.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup -->
-	<!-- popup-->
-	<div id="gal5" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g5.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup -->
-	<!-- popup-->
-	<div id="gal6" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g6.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup -->
-	<!-- popup-->
-	<div id="gal7" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g7.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup -->
-	<!-- popup-->
-	<div id="gal8" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g8.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup -->
-	<!-- popup-->
-	<div id="gal9" class="popup-effect animate">
-		<div class="popup">
-			<img src="{{ asset('templates/images/g9.jpg') }}" alt="Popup Image" class="img-fluid" />
-			<h4 class="p-mask">Plants</h4>
-			<a class="close" href="#gallery">&times;</a>
-		</div>
-	</div>
-	<!-- //popup -->
-	<!-- //gallery -->
-
-	<!-- contact -->
-	<section class="contact py-5" id="contact">
-		<div class="container py-xl-5 py-lg-3">
-			<h3 class="w3ls-title text-wh text-center font-weight-bold mb-5">Contact <span class="font-weight-light">Us</span></h3>
-			<div class="row contact-form">
-				<div class="offset-lg-2"></div>
-				<div class="col-lg-8 wthree-form-left">
-					<!-- contact form grid -->
-					<fieldset class="contact-top1" data-blast="borderColor">
-						<legend class="text-wh let text-capitalize">send us a note</legend>
-						<form action="#" method="post" class="f-color">
-							<div class="form-group">
-								<label for="contactusername">Name</label>
-								<input type="text" class="form-control" name="name" id="contactusername" required placeholder="Enter your name">
-							</div>
-							<div class="form-group">
-								<label for="contactemail">Email</label>
-								<input type="email" class="form-control" name="email" id="contactemail" required placeholder="Enter your Email">
-							</div>
-							<div class="form-group">
-								<label for="contactcomment">Your Message</label>
-								<textarea class="form-control" rows="5" name="message" id="contactcomment" required placeholder="your message"></textarea>
-							</div>
-							<button type="submit" class="btn btn-block" data-blast="bgColor">Send</button>
-						</form>
-					</fieldset>
-					<!--  //contact form grid ends here -->
-				</div>
-				<div class="offset-lg-2"></div>
-			</div>
-			<!-- contact address -->
-			<div class="row address bg-li">
-				<div class="col-lg-4 address-grid">
-					<div class="row address-info">
-						<div class="col-md-3 col-4 address-left text-lg-center text-sm-right text-center">
-							<i class="fa fa-envelope"></i>
-						</div>
-						<div class="col-md-9 col-8 address-right">
-							<p>
-								<a href="mailto:example@email.com"> mail 1@example.com</a>
-							</p>
-							<p>
-								<a href="mailto:example@email.com"> mail 2@example.com</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 address-grid my-lg-0 my-4">
-					<div class="row address-info">
-						<div class="col-md-3 col-4 address-left text-lg-center text-sm-right text-center">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="col-md-9 col-8 address-right">
-							<p>+1 234 567 8901</p>
-							<p>+1 567 567 9876</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 address-grid">
-					<div class="row address-info">
-						<div class="col-md-3 col-4 address-left text-lg-center text-sm-right text-center">
-							<i class="fa fa-map"></i>
-						</div>
-						<div class="col-md-9 col-8 address-right">
-							<p> 786 Main Road, hollies</p>
-							<p> California, USA</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- //contact address -->
-		</div>
-	</section>
-	<!-- //contact -->
-
-	<!-- partners -->
-	<section class="partners py-5" id="partners">
-		<div class="container py-xl-5 py-4">
-			<h3 class="w3ls-title text-da text-center font-weight-bold mb-5">Our <span class="font-weight-light">Partners</span></h3>
-			<div class="row grid-part text-center pt-4">
-				<div class="col-md-2 col-4">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-angellist"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-opencart"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-lastfm"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4 mt-md-0 mt-3">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-openid"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4 mt-md-0 mt-3">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-skyatlas"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4 mt-md-0 mt-3">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-ravelry"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- //partners -->
-
-	<!-- footer -->
-	<footer class="text-center py-4">
-		<div class="container py-xl-5 py-4">
-			<h3 class="text-da let mb-3">We Provide Best Services</h3>
-			<p class="footer-para mx-auto">Natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam
-				doloremque laudantium, totam rem aperiam</p>
-			<!-- logo -->
-			<h2 class="logo2 text-center mt-3">
-				<a href="index.html.twig">
-					Plants<i class="fa fa-pagelines" aria-hidden="true"></i>
-				</a>
-			</h2>
-			<!-- //logo -->
-			<!-- address -->
-			<div class="contact-left-footer mt-4">
-				<h6 class="text-da let mb-3">Sed do eiusmod tempor incididunt ut labore et dolore</h6>
-				<ul>
-					<li>
-						<p>
-							<i class="fa fa-map-marker mr-2"></i>345 Setwant natrer, USA
-						</p>
-					</li>
-					<li class="mx-4">
-						<p>
-							<i class="fa fa-phone mr-2"></i>+1(401) 1234 567.
-						</p>
-					</li>
-					<li>
-						<p class="text-wh">
-							<i class="fa fa-envelope-open mr-2"></i>
-							<a href="mailto:info@example.com">example@gmail.com</a>
-						</p>
-					</li>
-				</ul>
-			</div>
-			<!-- //address -->
-			<!-- social icons -->
-			<div class="footercopy-social mt-4">
-				<ul>
-					<li>
-						<a href="#">
-							<span class="fa fa-facebook-f"></span>
-						</a>
-					</li>
-					<li class="mx-2">
-						<a href="#">
-							<span class="fa fa-twitter"></span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="fa fa-rss"></span>
-						</a>
-					</li>
-					<li class="ml-2">
-						<a href="#">
-							<span class="fa fa-vk"></span>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<!-- //social icons -->
-			<!-- copyright -->
-			<div class="w3l-copy text-center mt-5">
-				<p class="text-da">© 2018 Plants. All rights reserved | Design by
-					<a href="http://w3layouts.com/">W3layouts</a>
-				</p>
-			</div>
-			<!-- //copyright -->
-		</div>
-	</footer>
-	<!-- //footer -->
-
-	<!-- move top icon -->
-	<a href="#home" class="move-top text-center"></a>
-	<!-- //move top icon -->
-
-</body>
-
+   {% endfor %}
+   {% endif %}
+      <div class="header-outs" id="home">
+         <div class="header-bar">
+            <div class="info-top-grid">
+               <div class="info-contact-agile">
+                  <ul>
+                     <li>
+                        <span class="fas fa-phone-volume"></span>
+                        <p>+(000)123 4565 32</p>
+                     </li>
+                     <li>
+                        <span class="fas fa-envelope"></span>
+                        <p><a href="mailto:info@example.com">info@example1.com</a></p>
+                     </li>
+                     <li>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="container-fluid">
+               <div class="hedder-up row">
+                  <div class="col-lg-3 col-md-3 logo-head">
+                     <h1><a class="navbar-brand" href="index.html.twig">Toys-Shop</a></h1>
+                  </div>
+                  <div class="col-lg-5 col-md-6 search-right">
+                     <form class="form-inline my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                        <button class="btn" type="submit">Search</button>
+                     </form>
+                  </div>
+                  <div class="col-lg-4 col-md-3 right-side-cart">
+                     <div class="cart-icons">
+                        <ul>
+                           <li>
+                              <span class="far fa-heart"></span>
+                           </li>
+                           <li>
+                              <button type="button" data-toggle="modal" data-target="#exampleModal"> <span class="far fa-user"></span></button>
+                           </li>
+                           <li class="toyscart toyscart2 cart cart box_1">
+                              <form action="#" method="post" class="last">
+                                 <input type="hidden" name="cmd" value="_cart">
+                                 <input type="hidden" name="display" value="1">
+                                 <button class="top_toys_cart" type="submit" name="submit" value="">
+                                 <span class="fas fa-cart-arrow-down"></span>
+                                 </button>
+                              </form>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                  <ul class="navbar-nav ">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html.twig">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="{{ path('communaute_forum') }}" class="nav-link">Forum</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="service.html" class="nav-link">Service</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="shop.html" class="nav-link">Shop Now</a>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pages
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="nav-link" href="icon.html">404 Page</a>
+                           <a class="nav-link " href="typography.html">Typography</a>
+                        </div>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Product
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="nav-link" href="product.html">Kids Toys</a>
+                           <a class="nav-link " href="product.html">Dolls</a>
+                           <a class="nav-link " href="product.html">Key Toys</a>
+                           <a class="nav-link " href="product.html">Boys Toys</a>
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+         <!-- Slideshow 4 -->
+         <div class="slider text-center">
+            <div class="callbacks_container">
+               <ul class="rslides" id="slider4">
+                  <li>
+                     <div class="slider-img one-img">
+                        <div class="container">
+                           <div class="slider-info ">
+                              <h5>Pick The Best Toy For <br>Your Kid</h5>
+                              <div class="bottom-info">
+                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="about.html">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="slider-img two-img">
+                        <div class="container">
+                           <div class="slider-info ">
+                              <h5>Sort Toys And Teddy bears<br>For Kids</h5>
+                              <div class="bottom-info">
+                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="about.html">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="slider-img three-img">
+                        <div class="container">
+                           <div class="slider-info">
+                              <h5>Best Toys And Dolls<br> For Kids</h5>
+                              <div class="bottom-info">
+                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="about.html">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <!-- This is here just to demonstrate the callbacks -->
+            <!-- <ul class="events">
+               <li>Example 4 callback events</li>
+               </ul>-->
+            <div class="clearfix"></div>
+         </div>
+      </div>
+      <!-- //banner -->
+      <!-- about -->
+      <section class="about py-lg-4 py-md-3 py-sm-3 py-3" id="about">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-4">
+            <h3 class="title text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3">Best Products</h3>
+            <div class="row banner-below-w3l">
+               <div class="col-lg-4 col-md-6 col-sm-6 text-center banner-agile-flowers">
+                  <img src="{{ asset('templates/images/a1.jpg') }}" class="img-thumbnail" alt="">
+                  <div class="banner-right-icon">
+                     <h4 class="pt-3">Baby Toys</h4>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6 col-sm-6 text-center banner-agile-flowers">
+                  <img src="{{ asset('templates/images/a2.jpg')}}" class="img-thumbnail" alt="">
+                  <div class="banner-right-icon">
+                     <h4 class="pt-3">Lite-Brite</h4>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6 col-sm-6 text-center banner-agile-flowers">
+                  <img src="{{ asset('templates/images/a3.jpg')}}" class="img-thumbnail" alt="">
+                  <div class="banner-right-icon">
+                     <h4 class="pt-3">Key Toys</h4>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6 col-sm-6 mt-3 text-center banner-agile-flowers">
+                  <img src="{{ asset('templates/images/a4.jpg')}}" class="img-thumbnail" alt="">
+                  <div class="banner-right-icon">
+                     <h4 class="pt-3">Play Toys</h4>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6 col-sm-6 mt-3 text-center banner-agile-flowers">
+                  <img src="{{ asset('templates/images/a5.jpg')}}" class="img-thumbnail" alt="">
+                  <div class="banner-right-icon">
+                     <h4 class="pt-3">Gift Toys</h4>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6 col-sm-6 mt-3 text-center banner-agile-flowers">
+                  <img src="{{ asset('templates/images/a6.jpg')}}" class="img-thumbnail" alt="">
+                  <div class="banner-right-icon">
+                     <h4 class="pt-3">Soft Toys</h4>
+                  </div>
+               </div>
+               <div class="toys-grids-upper">
+                  <div class="about-toys-off">
+                     <h2>Get Up to <span>70% Off </span>On Selected Toys</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- //about -->
+      <!--new Arrivals -->
+      <section class="blog py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">New Arrivals</h3>
+            <div class="slid-img">
+               <ul id="flexiselDemo1">
+                  <li>
+                     <div class="agileinfo_port_grid">
+                        <img src="{{ asset('templates/images/a1.jpg')}}" alt=" " class="img-fluid" />
+                        <div class="banner-right-icon">
+                           <h4 class="pt-3">Soft Toys</h4>
+                        </div>
+                        <div class="outs_more-buttn">
+                           <a href="shop.html">Shop Now</a>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="agileinfo_port_grid">
+                        <img src="{{ asset('templates/images/a2.jpg')}}" alt=" " class="img-fluid" />
+                        <div class="banner-right-icon">
+                           <h4 class="pt-3">Soft Toys</h4>
+                        </div>
+                        <div class="outs_more-buttn">
+                           <a href="shop.html">Shop Now</a>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="agileinfo_port_grid">
+                        <img src="{{ asset('templates/images/a3.jpg')}}" alt=" " class="img-fluid" />
+                        <div class="banner-right-icon">
+                           <h4 class="pt-3">Soft Toys</h4>
+                        </div>
+                        <div class="outs_more-buttn">
+                           <a href="shop.html">Shop Now</a>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="agileinfo_port_grid ">
+                        <img src="{{ asset('templates/images/a4.jpg')}}" alt=" " class="img-fluid" />
+                        <div class="banner-right-icon">
+                           <h4 class="pt-3">Soft Toys</h4>
+                        </div>
+                        <div class="outs_more-buttn">
+                           <a href="shop.html">Shop Now</a>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="agileinfo_port_grid">
+                        <img src="{{ asset('templates/images/a5.jpg')}}" alt=" " class="img-fluid" />
+                        <div class="banner-right-icon">
+                           <h4 class="pt-3">Soft Toys</h4>
+                        </div>
+                        <div class="outs_more-buttn">
+                           <a href="shop.html">Shop Now</a>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="agileinfo_port_grid ">
+                        <img src="{{ asset('templates/images/a6.jpg')}}" alt=" " class="img-fluid" />
+                        <div class="banner-right-icon">
+                           <h4 class="pt-3">Soft Toys</h4>
+                        </div>
+                        <div class="outs_more-buttn">
+                           <a href="shop.html">Shop Now</a>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+      <!--//about -->
+      <!--Customers Review -->
+      <section class="clients py-lg-4 py-md-3 py-sm-3 py-3" id="clients">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Customers Review</h3>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="row">
+                        <div class="col-lg-6 clients-w3layouts-row">
+                           <div class="least-w3layouts-text-gap">
+                              <div class="row">
+                                 <div class="col-md-4 col-sm-4 news-img">
+                                    <img src="{{ asset('templates/images/t1.jpg')}}" alt="" class="image-fluid">
+                                 </div>
+                                 <div class="col-md-8 col-sm-8 clients-says-w3layouts">
+                                    <h4>Milky Deo 
+                                    </h4>
+                                    <span class="mt-2">Duis posuere</span>
+                                 </div>
+                                 <div class="mt-3 news-agile-text">
+                                    <img src="{{ asset('templates/images/tt1.jpg')}}" alt="" class="image-fluid">
+                                    <p class="mt-3"><span class="fas fa-quote-left"></span>  velit sagittis vehicula. Duis posuere 
+                                       ex in mollis iaculis. Suspendisse tincidunt
+                                       velit sagittis vehicula. Duis posuere 
+                                       velit sagittis vehicula. Duis posuere <span class="fas fa-quote-right"></span>
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6 clients-w3layouts-row">
+                           <div class="least-w3layouts-text-gap">
+                              <div class="row">
+                                 <div class="col-md-4 col-sm-4 news-img">
+                                    <img src="{{ asset('templates/images/t2.jpg')}}" alt="" class="image-fluid">
+                                 </div>
+                                 <div class="col-md-8 col-sm-8 clients-says-w3layouts">
+                                    <h4>Sam Deo 
+                                    </h4>
+                                    <span class="mt-2">Duis posuere</span>
+                                 </div>
+                                 <div class="mt-3 news-agile-text">
+                                    <img src="{{ asset('templates/images/tt2.jpg')}}" alt="" class="image-fluid">
+                                    <p class="mt-3"><span class="fas fa-quote-left"></span>  velit sagittis vehicula. Duis posuere 
+                                       ex in mollis iaculis. Suspendisse tincidunt
+                                       velit sagittis vehicula. Duis posuere 
+                                       velit sagittis vehicula. Duis posuere <span class="fas fa-quote-right"></span>
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-lg-6 clients-w3layouts-row">
+                           <div class="least-w3layouts-text-gap">
+                              <div class="row">
+                                 <div class="col-md-4 col-sm-4 news-img">
+                                    <img src="{{ asset('templates/images/t1.jpg')}}" alt="" class="image-fluid">
+                                 </div>
+                                 <div class="col-md-8 col-sm-8 clients-says-w3layouts">
+                                    <h4>Milky Deo 
+                                    </h4>
+                                    <span class="mt-2">Duis posuere</span>
+                                 </div>
+                                 <div class="mt-3 news-agile-text">
+                                    <img src="{{ asset('templates/images/tt1.jpg')}}" alt="" class="image-fluid">
+                                    <p class="mt-3"><span class="fas fa-quote-left"></span>  velit sagittis vehicula. Duis posuere 
+                                       ex in mollis iaculis. Suspendisse tincidunt
+                                       velit sagittis vehicula. Duis posuere 
+                                       velit sagittis vehicula. Duis posuere <span class="fas fa-quote-right"></span>
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6 clients-w3layouts-row">
+                           <div class="least-w3layouts-text-gap">
+                              <div class="row">
+                                 <div class="col-md-4 col-sm-4 news-img">
+                                    <img src="{{ asset('templates/images/t3.jpg')}}" alt="" class="image-fluid">
+                                 </div>
+                                 <div class="col-md-8 col-sm-8 clients-says-w3layouts">
+                                    <h4>Sam Deo 
+                                    </h4>
+                                    <span class="mt-2">Duis posuere</span>
+                                 </div>
+                                 <div class="mt-3 news-agile-text">
+                                    <img src="{{ asset('templates/images/tt1.jpg')}}" alt="" class="image-fluid">
+                                    <p class="mt-3"><span class="fas fa-quote-left"></span>  velit sagittis vehicula. Duis posuere 
+                                       ex in mollis iaculis. Suspendisse tincidunt
+                                       velit sagittis vehicula. Duis posuere 
+                                       velit sagittis vehicula. Duis posuere <span class="fas fa-quote-right"></span>
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-lg-6 clients-w3layouts-row">
+                           <div class="least-w3layouts-text-gap">
+                              <div class="row">
+                                 <div class="col-md-4 col-sm-4 news-img">
+                                    <img src="{{ asset('templates/images/t2.jpg')}}" alt="" class="image-fluid">
+                                 </div>
+                                 <div class="col-md-8 col-sm-8 clients-says-w3layouts">
+                                    <h4>Milky Deo 
+                                    </h4>
+                                    <span class="mt-2">Duis posuere</span>
+                                 </div>
+                                 <div class="mt-3 news-agile-text">
+                                    <img src="{{ asset('templates/images/tt2.jpg')}}" alt="" class="image-fluid">
+                                    <p class="mt-3"><span class="fas fa-quote-left"></span>  velit sagittis vehicula. Duis posuere 
+                                       ex in mollis iaculis. Suspendisse tincidunt
+                                       velit sagittis vehicula. Duis posuere 
+                                       velit sagittis vehicula. Duis posuere <span class="fas fa-quote-right"></span>
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6 clients-w3layouts-row">
+                           <div class="least-w3layouts-text-gap">
+                              <div class="row">
+                                 <div class="col-md-4 col-sm-4 news-img">
+                                    <img src="{{ asset('templates/images/t3.jpg')}}" alt="" class="image-fluid">
+                                 </div>
+                                 <div class="col-md-8 col-sm-8 clients-says-w3layouts">
+                                    <h4>Sam Deo 
+                                    </h4>
+                                    <span class="mt-2">Duis posuere</span>
+                                 </div>
+                                 <div class="mt-3 news-agile-text">
+                                    <img src="{{ asset('templates/images/tt1.jpg')}}" alt="" class="image-fluid">
+                                    <p class="mt-3"><span class="fas fa-quote-left"></span> velit sagittis vehicula. Duis posuere 
+                                       ex in mollis iaculis. Suspendisse tincidunt
+                                       velit sagittis vehicula. Duis posuere 
+                                       velit sagittis vehicula. Duis posuere <span class="fas fa-quote-right"></span>
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="sr-only">Previous</span>
+               </a>
+               <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="sr-only">Next</span>
+               </a>
+            </div>
+         </div>
+      </section>
+      <!--//Customers Review -->
+      <!-- Product-view -->
+      <section class="product py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Latest Toys</h3>
+            <div class=" img-toy-w3l-top">
+            </div>
+            <div class="mt-lg-4 mt-3 product-info-img">
+               <p>velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+               <div class="clients_more-buttn">
+                  <a href="shop.html">Shop Now</a>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6 img-toy-w3l-left">
+                  <div class="toys-img-one">
+                  </div>
+                  <div class="mt-lg-4 mt-3 product-info-img">
+                     <p>velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                        velit sagittis vehicula. Duis posuere 
+                     </p>
+                     <div class="clients_more-buttn">
+                        <a href="shop.html">Shop Now</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6 img-toy-agile-right">
+                  <div class="toys-img-one-two">
+                  </div>
+                  <div class="mt-lg-4 mt-3 product-info-img">
+                     <p>velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                        velit sagittis vehicula. Duis posuere 
+                     </p>
+                     <div class="clients_more-buttn">
+                        <a href="shop.html">Shop Now</a>
+                     </div>
+                  </div>
+                  <div class="toys-img-one-three">
+                  </div>
+                  <div class="mt-lg-4 mt-3 product-info-img">
+                     <p>velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                        velit sagittis vehicula. Duis posuere 
+                     </p>
+                     <div class="clients_more-buttn">
+                        <a href="shop.html">Shop Now</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--//Product-view-->
+      <!--//Product-view-->
+      <section class="premium py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Premium Toys</h3>
+            <div class="row">
+               <div class="col-lg-6 agileits-toys-left"></div>
+               <div class="col-lg-6 agileits-toys-right">
+                  <div class="sub-agile-info-toys">
+                     <p>velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                        velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                     </p>
+                     <div class="clients_more-buttn">
+                        <a href="shop.html" class="mb-0">Shop Now</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row mt-lg-4 mt-md-4 mt-3">
+               <div class="col-lg-6 agileits-toys-right">
+                  <div class="sub-agile-info-toys">
+                     <p>velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                        velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                     </p>
+                     <div class="clients_more-buttn ">
+                        <a href="shop.html" class="mb-0">Shop Now</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6 agileits-toys-left"></div>
+            </div>
+         </div>
+      </section>
+      <!--Product-about-->
+      <section class="about py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">About Toys</h3>
+            <div class="about-products-w3layouts">
+               <p>velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+               <p class="my-lg-4 my-md-3 my-3">velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+               <p>velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+            </div>
+         </div>
+      </section>
+      <!--//Product-about-->
+      <!--subscribe-address-->
+      <section class="subscribe">
+         <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-6 col-md-6 map-info-right px-0">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
+            </div>
+            <div class="col-lg-6 col-md-6 address-w3l-right text-center">
+               <div class="address-gried ">
+                  <span class="far fa-map"></span>
+                  <p>25478 Road St.121<br>USA New Hill
+                  <p>
+               </div>
+               <div class="address-gried mt-3">
+                  <span class="fas fa-phone-volume"></span>
+                  <p> +(000)123 4565<br>+(010)123 4565</p>
+               </div>
+               <div class=" address-gried mt-3">
+                  <span class="far fa-envelope"></span>
+                  <p><a href="mailto:info@example.com">info@example1.com</a>
+                     <br><a href="mailto:info@example.com">info@example2.com</a>
+                  </p>
+               </div>
+            </div>
+         </div>
+		 </div>
+      </section>
+      <!--//subscribe-address-->
+      <section class="sub-below-address py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Get In Touch Us</h3>
+            <div class="icons mt-4 text-center">
+               <ul>
+                  <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                  <li><a href="#"><span class="fas fa-envelope"></span></a></li>
+                  <li><a href="#"><span class="fas fa-rss"></span></a></li>
+                  <li><a href="#"><span class="fab fa-vk"></span></a></li>
+               </ul>
+               <p class="my-3">velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+            </div>
+            <div class="email-sub-agile">
+               <form action="#" method="post">
+                  <div class="form-group sub-info-mail">
+                     <input type="email" class="form-control email-sub-agile" placeholder="Email">
+                  </div>
+                  <div class="text-center">
+                     <button type="submit" class="btn subscrib-btnn">Subscribe</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </section>
+      <!--//subscribe-->
+      <!-- footer -->
+      <footer class="py-lg-4 py-md-3 py-sm-3 py-3 text-center">
+         <div class="copy-agile-right">
+            <p> 
+               © 2018 Toys-Shop. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a>
+            </p>
+         </div>
+      </footer>
+      <!-- //footer -->
+      <!-- Modal 1-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="register-form">
+                     <form  method="post">
+                        <div class="fields-grid">
+                           <div class="styled-input">
+                              <input type="email" placeholder="Email" name="email" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="password" placeholder="Mot de passe" name="password" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="hidden" name="choix"  value="connexion">
+                           </div>
+                           <button type="submit" class="btn subscrib-btnn">Se connecter</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- //Modal 1-->
+      <!--js working-->
+      <script src='{{ asset('templates/js/jquery-2.2.3.min.js') }}'></script>
+      <!--//js working-->
+      <!-- cart-js -->
+      <script src="{{ asset('templates/js/minicart.js')}}"></script>
+      <script>
+         toys.render();
+         
+         toys.cart.on('toys_checkout', function (evt) {
+         	var items, len, i;
+         
+         	if (this.subtotal() > 0) {
+         		items = this.items();
+         
+         		for (i = 0, len = items.length; i < len; i++) {}
+         	}
+         });
+      </script>
+      <!-- //cart-js -->
+      <!--responsiveslides banner-->
+      <script src="{{ asset('templates/js/responsiveslides.min.js')}}"></script>
+      <script>
+         // You can also use "$(window).load(function() {"
+         $(function () {
+         	// Slideshow 4
+         	$("#slider4").responsiveSlides({
+         		auto: true,
+         		pager:false,
+         		nav:true ,
+         		speed: 900,
+         		namespace: "callbacks",
+         		before: function () {
+         			$('.events').append("<li>before event fired.</li>");
+         		},
+         		after: function () {
+         			$('.events').append("<li>after event fired.</li>");
+         		}
+         	});
+         
+         });
+      </script>
+      <!--// responsiveslides banner-->	 
+      <!--slider flexisel -->
+      <script src="{{ asset('templates/js/jquery.flexisel.js')}}"></script>
+      <script>
+         $(window).load(function() {
+         	$("#flexiselDemo1").flexisel({
+         		visibleItems: 3,
+         		animationSpeed: 3000,
+         		autoPlay:true,
+         		autoPlaySpeed: 2000,    		
+         		pauseOnHover: true,
+         		enableResponsiveBreakpoints: true,
+         		responsiveBreakpoints: { 
+         			portrait: { 
+         				changePoint:480,
+         				visibleItems: 1
+         			}, 
+         			landscape: { 
+         				changePoint:640,
+         				visibleItems:2
+         			},
+         			tablet: { 
+         				changePoint:768,
+         				visibleItems: 2
+         			}
+         		}
+         	});
+         	
+         });
+      </script>
+      <!-- //slider flexisel -->
+      <!-- start-smoth-scrolling -->
+      <script src="{{ asset('templates/js/move-top.js')}}"></script>
+      <script src="{{ asset('templates/js/easing.js')}}"></script>
+      <script>
+         jQuery(document).ready(function ($) {
+         	$(".scroll").click(function (event) {
+         		event.preventDefault();
+         		$('html,body').animate({
+         			scrollTop: $(this.hash).offset().top
+         		}, 900);
+         	});
+         });
+      </script>
+      <!-- start-smoth-scrolling -->
+      <!-- here stars scrolling icon -->
+      <script>
+         $(document).ready(function () {
+         
+         	var defaults = {
+         		containerID: 'toTop', // fading element id
+         		containerHoverID: 'toTopHover', // fading element hover id
+         		scrollSpeed: 1200,
+         		easingType: 'linear'
+         	};
+         	$().UItoTop({
+         		easingType: 'easeOutQuart'
+         	});
+         
+         });
+      </script>
+      <!-- //here ends scrolling icon -->
+      <!--bootstrap working-->
+      <script src="{{ asset('templates/js/bootstrap.min.js')}}"></script>
+      <!-- //bootstrap working-->
+   </body>
 </html>

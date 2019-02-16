@@ -13,3 +13,8 @@ communaute_theme:
 communaute_affich_comment :
     path:     /comments/{idtheme}
     defaults: { _controller: CommunauteBundle:Forum:comments }
+communaute_sup_comment :
+    path:     /comments/{idcomment}
+    defaults: { _controller: CommunauteBundle:Forum:supcomment }
+
+
