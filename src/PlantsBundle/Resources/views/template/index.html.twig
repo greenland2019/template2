@@ -6,6 +6,36 @@
    -->
 <!DOCTYPE html>
 <html lang="zxx">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script >
+    $(document).ready(function() {
+        $("#connect").click(function () {
+            var password = $("#password").val();
+            var email = $("#email").val();
+            $.ajax({
+                url: "{{ path('plants_homepage') }}",
+                type: 'POST',
+                dataType: 'json',
+                data:{password:password,email:email},
+                async: true,
+
+                success: function (data) {
+                        if(data.result=='success'){
+                            alert('Bienvenu'+data.login);
+                            $('#choix').hide();
+                        }
+                        else
+                            $('#choix').show();
+                },
+                error: function () {
+                    alert('Ajax request failed.');
+
+                }
+            });
+
+        });
+    });
+</script>
    <head>
       <title>Toys Shop an Ecommerce Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
       <!--meta tags -->
@@ -711,20 +741,19 @@
                </div>
                <div class="modal-body">
                   <div class="register-form">
-                     <form  method="post">
+
                         <div class="fields-grid">
                            <div class="styled-input">
-                              <input type="email" placeholder="Email" name="email" required="">
+                              <input type="email" placeholder="Email" name="email" required="" id="email">
                            </div>
                            <div class="styled-input">
-                              <input type="password" placeholder="Mot de passe" name="password" required="">
+                              <input type="password" placeholder="Mot de passe" name="password" required="" id="password">
                            </div>
                            <div class="styled-input">
-                              <input type="hidden" name="choix"  value="connexion">
+                              <p  value="connexion" style="display: none;font-size: 12px;color: red" id="choix">Informations erronnées</p>
                            </div>
-                           <button type="submit" class="btn subscrib-btnn">Se connecter</button>
+                           <button id="connect" class="btn subscrib-btnn">Se connecter</button>
                         </div>
-                     </form>
                   </div>
                </div>
                <div class="modal-footer">

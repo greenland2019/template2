@@ -22,14 +22,17 @@
 <div class="header-outs" id="home">
 <div class="container-fluid">
     <div class="hedder-up row">
-        <div class="col-lg-3 col-md-3 logo-head">
-            <h1 ALIGN="center">FORUM DE DISCUSSION</h1>
+        <div align="center">
+            <h1 ALIGN="center" style="color: white">FORUM DE DISCUSSION</h1>
         </div>
 
     </div>
 </div>
 </div>
-<a href="{{ path('plants_logout') }}"> <img src="{{ asset('templates/images/logout.png') }}" height="20px" width="20px">Logout</a>
+<div style="float: right">
+    <a href="{{ path('plants_logout') }}"> <img src="{{ asset('templates/images/logout.png') }}" height="20px" width="20px">Se déconnecter</a>
+</div>
+
 
 <h2>THEMES</h2>
 <p>Bonjour {{ app.session.get('login')}}</p>
