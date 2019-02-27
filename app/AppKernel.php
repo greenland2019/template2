@@ -19,6 +19,9 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new PlantsBundle\PlantsBundle(),
             new CommunauteBundle\CommunauteBundle(),
+            new CommandeBundle\CommandeBundle(),
+            new ProduitBundle\ProduitBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

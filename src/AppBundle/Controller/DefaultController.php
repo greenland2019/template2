@@ -4,18 +4,35 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Knp\Snappy\Pdf;
+use CommandeBundle\Repository\PanierRepository;
+
+
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
+
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig.twig.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $em = $this->getDoctrine()->getManager();
+        if($request->getSession()->get('login'))
+        {
+            $personne=$em->getRepository("PlantsBundle:Personne")->findOneBy(['prenom'=>$request->getSession()->get('login')]);
+            $paniers=$em->getRepository("CommandeBundle:Panier")->findBy(['user'=>$personne]);
+            $panier = $em->getRepository('CommandeBundle:Panier')->total($personne);
+        }
+        $snappy= $this->get('knp_snappy.pdf');
+        $html=$this->renderView('@Plants/template/about.html.twig',array("pan"=>$paniers,"prixtot"=>$panier));
+        $filename='myFirstSnappyPDF';
+        return new Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          =>'application/pdf',
+                'Content-Disposition'   =>'inline; filename="'.$filename.'.pdf"'
+            )
+        );
     }
 }

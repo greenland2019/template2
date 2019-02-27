@@ -23,6 +23,7 @@
             $("#numtel").show();
             $("#b6").show();
             $("#adresse").show();
+            $("#btnim").show();
             $("#choix").val('inscription');
         });
 });
@@ -75,11 +76,11 @@
         </tr>
         <tr>
             <td><b id="b3">Email:</b></td>
-            <td><input type="text" name="email" id="email" /></td>
+            <td><input type="text" name="email" id="email" required=""/></td>
         </tr>
         <tr>
             <td><b id="b4">Mot de passe:</b></td>
-            <td><input type="password" name="password" id="password"/></td>
+            <td><input type="password" name="password" id="password" required=""/></td>
         </tr>
         <tr>
             <td><b  id="b5" hidden>Numero de telephone:</b></td>
@@ -88,6 +89,10 @@
         <tr>
             <td><b  id="b6" hidden>Adresse:</b></td>
             <td><input type="text" name="adresse" id="adresse" hidden/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="document.getElementById('image').click(); return false;" id="btnim" hidden />Image de profil</button><input type="file" name="image" id="image" hidden/></td>
         </tr>
         <input type="hidden" id="choix" name="choix" value="connexion">
     </table>

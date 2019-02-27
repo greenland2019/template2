@@ -1,0 +1,35 @@
+commande_homepage:
+    path:     /
+    defaults: { _controller: CommandeBundle:Default:index }
+plants_shop:
+    path:     /shop
+    defaults: { _controller: CommandeBundle:default:shop }
+shop_addtopanier:
+    path:     /pan
+    defaults: { _controller: CommandeBundle:Panier:addToPanier }
+afficher_panier:
+    path:     /panier
+    defaults: { _controller: CommandeBundle:Panier:afficherPanier }
+shop_modifierpanierplus:
+    path:     /paniers
+    defaults: { _controller: CommandeBundle:Panier:modifierPanierplus }
+shop_modifierpaniermoin:
+    path:     /panie
+    defaults: { _controller: CommandeBundle:Panier:modifierPaniermoin }
+facture:
+    path:     /facture
+    defaults: { _controller: CommandeBundle:Commande:facture }
+valider_commande:
+    path:     /payement
+    defaults: { _controller: CommandeBundle:Commande:valider }
+supprimer_panier:
+    path:     /supp
+    defaults: { _controller: CommandeBundle:Panier:supprimer }
+htmltopdf:
+    path:     /d
+    defaults: { _controller: AppBundle:Default:index }
+
+
+
+
+

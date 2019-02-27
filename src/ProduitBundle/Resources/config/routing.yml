@@ -1,0 +1,3 @@
+produit_homepage:
+    path:     /ppp
+    defaults: { _controller: ProduitBundle:Default:index }

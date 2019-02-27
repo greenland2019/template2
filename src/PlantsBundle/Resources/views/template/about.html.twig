@@ -1,0 +1,42 @@
+<div>
+<h1 align="center">Facture</h1>
+</div>
+
+
+
+<table border="1" align="right" width="70%">
+    <thead>
+    <tr>
+
+        <th>Produit</th>
+        <th>Quantite</th>
+        <th>Prix unitaire</th>
+        <th>Prix </th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+{% for panier in pan %}
+    <tr>
+    <td align="center">{{ panier.produitP.nom }}</td>
+    <td align="center">{{ panier.quantite }}</td>
+    <td align="center">{{ panier.produitP.prix }}</td>
+    <td align="center">{{ panier.produitP.prix * panier.quantite }}</td>
+    {% endfor %}
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div align="right">
+<p align="right">Total  : {{ prixtot }} DT</p>
+<p align="right">________________</p>
+<p align="right">Frais Livraison   : 50Dt</p>
+<p align="right">________________</p>
+<p align="right">Prix Total : {{ prixtot + 50 }} DT</p>
+</div>

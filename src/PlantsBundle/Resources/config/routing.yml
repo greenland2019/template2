@@ -6,6 +6,8 @@ plants_inscription:
     path:     /inscription
     defaults: { _controller: PlantsBundle:User:adduser }
 
+
 plants_logout:
     path:     /deconnect
     defaults: { _controller: PlantsBundle:User:logout }
+
