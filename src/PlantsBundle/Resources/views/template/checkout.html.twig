@@ -67,6 +67,7 @@
 
                  success: function(data) {
                     $('#prix-'+str).html(data.newprix);
+
                  },
                  error : function() {
                      alert('Ajax request failed.');
@@ -84,7 +85,7 @@
                async:      true,
 
                success: function(data) {
-                 ;
+                  $('#'+str).html('');
                },
                error : function() {
                   alert('Ajax request failed.');
@@ -262,10 +263,11 @@
                                  <td class="invert" id="nom-{{ panier.id }}">{{ panier.produitP.nom }}</td>
                                  <td class="invert">{{ panier.produitP.prix }}</td>
                                  <td class="invert" id="prix-{{ panier.id }}">{{ (panier.produitP.prix)*(panier.quantite) }}</td>
-                                 <td class="invert">
-                                    <div class="rem" onclick="supprimer({{ panier.id }})">
-                                       <div class="close1"> </div>
-                                    </div>
+
+                                 <td>
+                                    <button onclick="supprimer({{ panier.id }})">supprimer</button>
+
+
                                 </td>
                               </tr>
                            {% endfor %}

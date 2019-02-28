@@ -21,6 +21,13 @@ class PanierController extends Controller
             $produit = $em->getRepository('ProduitBundle:Produit')->find($request->get('id'));
             $personne = $em->getRepository('PlantsBundle:Personne')->findOneBy(['prenom'=>$request->get('personne_id')]);
             $pan= $em->getRepository('CommandeBundle:Panier')->findOneBy(['user'=>$personne,'produitP'=>$produit]);
+                if($produit->getStock()<$request->get('qte'))
+                {
+                    $response = new Response(json_encode(array('result' => 'Stock insuffisant')));
+
+                    $response->headers->set('Content-Type', 'application/json');
+                    return $response;
+                }
                  if(!$pan)
                  {
                  $panier = new Panier();
@@ -71,11 +78,12 @@ class PanierController extends Controller
         $em = $this->getDoctrine()->getManager();
         if($request->isXmlHttpRequest()) {
 
-           $paniers = $em->getRepository("CommandeBundle:Panier")->find($request->get('id'));;
+           $paniers = $em->getRepository("CommandeBundle:Panier")->find($request->get('id'));
+
             $paniers->setQuantite($paniers->getQuantite()-1);
             $em->persist($paniers);
             $em->flush();
-            $response = new Response(json_encode(array('result' => 'bien','newprix'=>$paniers->getProduitP()->getPrix()*$paniers->getQuantite())));
+            $response = new Response(json_encode(array('newprix'=>$paniers->getProduitP()->getPrix()*$paniers->getQuantite())));
 
             $response->headers->set('Content-Type', 'application/json');
             return $response;
@@ -89,7 +97,8 @@ class PanierController extends Controller
         $em = $this->getDoctrine()->getManager();
         if($request->isXmlHttpRequest()) {
 
-            $paniers = $em->getRepository("CommandeBundle:Panier")->find($request->get('id'));;
+            $paniers = $em->getRepository("CommandeBundle:Panier")->find($request->get('id'));
+
             $paniers->setQuantite($paniers->getQuantite() + 1);
             $em->persist($paniers);
             $em->flush();

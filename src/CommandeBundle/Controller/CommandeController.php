@@ -32,6 +32,13 @@ class CommandeController extends Controller
             $commande->setPersonne($personne);
                 foreach ($paniers as $pan){
                     $produit=$em->getRepository("ProduitBundle:Produit")->findOneBy(['id'=>$pan->getProduitP()]);
+                    if($pan->getQuantite()>$produit->getStock())
+                    {
+                        $response = new Response(json_encode(array('result' => 'Stock insuffisant')));
+
+                        $response->headers->set('Content-Type', 'application/json');
+                        return $response;
+                    }
 
                     $produit->setStock(($produit->getStock())-($pan->getQuantite()));
                 $commande->setProduits($commande->getProduits().$pan->getProduitP()->getNom().'*'.$pan->getQuantite().';');
